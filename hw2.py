@@ -1,19 +1,29 @@
-# Задание 2. Пользователь вводит время в секундах.
-# Переведите время в часы, минуты и секунды и выведите в формате чч:мм:сс.
-# Используйте форматирование строк.
+# Реализовать функцию, принимающую несколько параметров,
+# описывающих данные пользователя: имя, фамилия, год рождения, город проживания, email, телефон.
+# Функция должна принимать параметры как именованные аргументы.
+# Реализовать вывод данных о пользователе одной строкой.
 
 # Решение:
 
-user_time = int(input('Введите время в секундах\n'))  # запросила время у пользователя число
+user_name = input('Введите ваше имя ')
+user_surname = input('Введите вашу фамилию ')
+user_birth_date = int(input('Введите ваш год рождения '))
+user_city = input('Введите ваш город проживания ')
+user_email = input('Введите ваш email ')
+user_phone = int(input('Введите ваш номер телефона '))
 
-hours = (user_time / 3600)  # перевела в часы
-whole_hours = round(hours)  # округлила
+var1 = user_name
+var2 = user_surname
+var3 = user_birth_date
+var4 = user_city
+var5 = user_email
+var6 = user_phone
 
-minutes = (hours - int(hours)) * 60  # перевела в минуты
-whole_minutes = round(minutes)  # округлила
 
-seconds = (minutes - int(minutes)) * 100  # перевела в секунды
-whole_seconds = round(seconds)  # округлила
+def user_func(var1, var2, var3, var4, var5, var6):
+    print(
+        f"Имя: {var1}, Фамилия: {var2}, Год рождения: {var3}, Город проживания: {var4}, email: {var5}, Номер телефона: {var6}")
 
-full_data = f'{whole_hours} : {whole_minutes} : {whole_seconds}'  # форматирование строки
-print('Точное время чч:мм:сс ', full_data)  # вывела на экран
+
+user_func(var1=user_name, var2=user_surname, var3=user_birth_date,
+          var4=user_city, var5=user_email, var6=user_phone)
